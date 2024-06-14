@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  app:
+    image: yangqigo/go-pi-dashboard
+    restart: always
+    volumes:
+      - ./conf:/conf
+      - ./logs:/logs
+    ports:
+      - "1024:9001" 
