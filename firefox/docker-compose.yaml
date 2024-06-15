@@ -1,0 +1,18 @@
+name: firefox
+services:
+    firefox:
+        container_name: firefox
+        environment:
+            - TZ=Asia/Hong_Kong
+            - DISPLAY_WIDTH=1920
+            - DISPLAY_HEIGHT=1080
+            - KEEP_APP_RUNNING=1
+            - ENABLE_CJK_FONT=1
+            - VNC_PASSWORD=admin
+        ports:
+            - 5800:5800
+            - 5900:5900
+        volumes:
+            - /data/firefox/config:/config:rw
+        shm_size: 2g
+        image: jlesage/firefox
